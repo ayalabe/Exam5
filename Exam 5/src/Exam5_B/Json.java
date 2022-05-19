@@ -23,9 +23,9 @@ public class Json {
 			//collections need TypeToken
 			JsonReader jsonReader = new JsonReader(fileReader);
 			Type homeListType = new TypeToken<ArrayList<Home>>(){}.getType();
-			List<Home> pastryList = gson.fromJson(jsonReader,homeListType);
+			List<Home> homeList = gson.fromJson(jsonReader,homeListType);
 	
-			pastryList.forEach(System.out::println);
+			homeList.forEach(System.out::println);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
