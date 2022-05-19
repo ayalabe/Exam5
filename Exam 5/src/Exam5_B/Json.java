@@ -15,15 +15,15 @@ import com.google.gson.stream.JsonReader;
 
 public class Json {
 	
-	public void listPastryObjectDeserialize(String src) {
+	public void listHomeObjectDeserialize(String src) {
 		File file = new File(src);
 		try (FileReader fileReader = new FileReader(file)) {
 
 			Gson gson = new Gson();
 			//collections need TypeToken
 			JsonReader jsonReader = new JsonReader(fileReader);
-			Type pastryListType = new TypeToken<ArrayList<Home>>(){}.getType();
-			List<Home> pastryList = gson.fromJson(jsonReader,pastryListType);
+			Type homeListType = new TypeToken<ArrayList<Home>>(){}.getType();
+			List<Home> pastryList = gson.fromJson(jsonReader,homeListType);
 	
 			pastryList.forEach(System.out::println);
 		} catch (FileNotFoundException e) {
